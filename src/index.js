@@ -54,34 +54,6 @@ async function handleSearchPhotos(event) {
     }
 }
 
-// function handleSearchPhotos(event) {
-
-//     event.preventDefault();
-//     const searchQuery = inputElement.value.trim();
-
-//     if (!searchQuery) {
-//         return;
-//     }
-
-//     galleryContainer.innerHTML = '';
-//     pixabayApiInstance.resetPage();
-//     pixabayApiInstance.query = searchQuery;
-//     pixabayApiInstance.fetchPhotos().then(data => {
-//         if (!data.totalHits) {
-//             Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-//         } else {
-//             Notify.success(`Hooray! We found ${data.totalHits} images. `);
-//         }
-//         if (data.totalHits > pixabayApiInstance.per_page) {
-//             loadMoreButton.style.display = 'block';
-//         }
-//         pixabayApiInstance.changePage();
-//         return markupPhotos(data.hits);
-//     })
-//         .then(renderMarkup)
-//         .catch(console.warn);
-// }
-
 function markupPhotos(photosMarkup) {
     return photosMarkup.map(({
         webformatURL,
